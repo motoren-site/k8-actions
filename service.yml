@@ -9,4 +9,4 @@ spec:
   - name: k8-actions-port
     protocol: TCP
     port: 80
-    targetPort: http-web-svc
+    targetPort: 80
