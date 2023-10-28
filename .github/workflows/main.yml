@@ -22,4 +22,10 @@ jobs:
 
     - name: Push to Digital Ocean Registry
       run: docker push registry.digitalocean.com/containers/k8-actions:$(echo $GITHUB_SHA | head -c7)
-    ##Add step for pusing to registry.digitalocean.com/containers
+    
+    - name: Deploy to Digital Ocean
+      uses: matootie/dokube@v1.3.4
+      with:
+        k8s_deployment: deployment.yml
+      env:
+        KUBECONFIG: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
