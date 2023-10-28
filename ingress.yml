@@ -3,11 +3,11 @@ kind: Ingress
 metadata:
   name: minimal-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-  - host: app.ostepop.site
+  - host: app.ostepopp.site
     http:
       paths:
       - path: /k8-actions
