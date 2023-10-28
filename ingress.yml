@@ -10,7 +10,7 @@ spec:
   - host: app.ostepopp.site
     http:
       paths:
-      - path: "/PATH_NAME(/|$)(.*)"
+      - path: "/k8-actions(/|$)(.*)"
         pathType: Prefix
         backend:
           service:
