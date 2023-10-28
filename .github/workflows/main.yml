@@ -23,9 +23,12 @@ jobs:
     - name: Push to Digital Ocean Registry
       run: docker push registry.digitalocean.com/containers/k8-actions:$(echo $GITHUB_SHA | head -c7)
     
-    - name: Deploy to Digital Ocean
+    - name: Set up kubectl
       uses: matootie/dokube@v1.3.4
       with:
         clusterName: k8s-bergen
         personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
-        k8s_deployment: deployment.yml
+
+    - name: Deploy to DO
+      run: kubectl apply -f ../deployment.yaml
+      
