@@ -4,7 +4,7 @@ metadata:
   name: k8-actions
   namespace: apps
   labels:
-    app: nginx
+    k8s-app: k8-actions
 spec:
   replicas: 3
   selector:
